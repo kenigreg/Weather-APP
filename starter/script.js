@@ -38,6 +38,7 @@ $("#search-button").on("click", function (event) {
             return response.json();
         })
         .then(function (data) {
+            console.log(data);
 
         // Creating Elements for the History data
             const historyCityEl = $("<button></button>").addClass("list-group-item list-group-item-action active").attr({ type: "button", id: "search-city", "aria-current": "true" }).text(data.name);
@@ -61,6 +62,9 @@ $("#search-button").on("click", function (event) {
 
             $("#today").append(cityEl, currentDateEl, weatherIconEl, weatherDescriptEl, tempEl, windEl, humidityEl);
             $("#history").append(historyCityEl);
+
+            // Code to empty search input box
+            $("#search-input").val("");
 
         })
 
