@@ -16,7 +16,25 @@ $("#search-input").on("keyup", function (e) {
 $("#search-button").on("click", function (event) {
     event.preventDefault();
 
-    // URL for API Call
-    const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`;
-    const queryURL1 = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+// URL for API Call
+    const queryURLForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`;
+    const queryURLWeather = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
+// API Fecth Call for User City Weather search
+    fetch(queryURLWeather)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        })
+
+// API Fecth Call for User City Weather Forecast search
+        fetch(queryURLForecast)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        })
 });
