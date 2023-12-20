@@ -125,19 +125,16 @@ $("#search-button").on("click", function (event) {
         })
         .then(function (data) {
             console.log(data.list);
-            topEl = $("<h5></h5>").attr("id", "topHeading").text("5-Day Forecast:");
+            topEl = $("<h4></h4>").attr("id", "topHeading").text("5-Day Forecast:");
             $("#forecast").append(topEl);
             
             $.each(data.list, function (i, value) {
-                
-                i = i + 10;
-                console.log(value);
                     date = dayjs(value.dt_txt).format('DD/MM/YYYY');
-                    currentDateEl2 = $("<h5></h5>").addClass("card-title").text(date);
-                    weatherDescriptEl2 = $("<p></p>").addClass("card-text").text(value.weather[0].description);
-                    tempEl2 = $("<p></p>").addClass("card-text").text("Temp: " + value.main.temp + " °C");
-                    windEl2 = $("<p></p>").addClass("card-text").text("Wind Speed: " + value.wind.speed + " m/s");
-                humidityEl2 = $("<p></p>").addClass("card-text").text("Humidity: " + value.main.humidity + "%");
+                    currentDateEl2 = $("<h5></h5>").addClass("card-title").attr("id", "forecastDate").text(date);
+                    weatherDescriptEl2 = $("<p></p>").addClass("card-text").attr("id", "forecastWeather").text(value.weather[0].description);
+                    tempEl2 = $("<p></p>").addClass("card-text").attr("id", "forecastTemp").text("Temp: " + value.main.temp + " °C");
+                    windEl2 = $("<p></p>").addClass("card-text").attr("id", "forecastWind").text("Wind Speed: " + value.wind.speed + " m/s");
+                humidityEl2 = $("<p></p>").addClass("card-text").attr("id", "forecastHumidity").text("Humidity: " + value.main.humidity + "%");
                 
                 if (value.weather[0].main === "Smoke") {
                     weatherIconEl2 = $("<i></i>").addClass(Smoke).attr("id", "forecastIcon");

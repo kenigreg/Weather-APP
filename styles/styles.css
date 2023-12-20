@@ -34,3 +34,13 @@
     margin-top: 10px !important;
     
   }
+
+  #forecast.h5, #forecast.i, #forecast.p {
+    border-style: solid !important;
+    border-width: 2px !important; 
+  }
+
+  #forecastIcon, #forecastWeather {
+    display: inline !important;
+    padding-right: 5px;
+  }
