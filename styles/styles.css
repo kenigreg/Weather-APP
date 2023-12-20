@@ -9,7 +9,7 @@
     padding-left: 5px !important; 
   }
 
-  #cityName {
+  #cityName, #cityIcon, #cityDate, #cityWeather {
     display: inline !important;
     padding-right: 5px;
   }
@@ -31,4 +31,6 @@
   #search-button {
     display: block !important;
     margin-left: 10px !important;
+    margin-top: 10px !important;
+    
   }
